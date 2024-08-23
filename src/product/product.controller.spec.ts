@@ -42,14 +42,13 @@ describe('ProductController', () => {
   describe('create', () => {
     it('should call ProductService.create with the correct parameters', async () => {
       const createProductDto: CreateProductDto = {
+        id: 1,
         productCode: '1000',
         productDescription: 'Sedan',
         location: 'West Malaysia',
         price: 100,
       };
-      jest
-        .spyOn(service, 'create')
-        .mockResolvedValue({ id: 1, ...createProductDto });
+      jest.spyOn(service, 'create').mockResolvedValue(createProductDto);
 
       const result = await controller.create(createProductDto);
 

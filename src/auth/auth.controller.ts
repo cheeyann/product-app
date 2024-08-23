@@ -14,8 +14,6 @@ export class AuthController {
       loginDto.username,
       loginDto.roles,
     );
-    console.log('loginDto', loginDto);
-    console.log('user', user);
     if (!user) {
       throw new UnauthorizedException('Invalid credentials');
     }
